@@ -32,7 +32,7 @@ app.get("/pizzas/margarita", (req, res, send) => {
         title: 'Pizza Margarita',
         price: 12,
         recommendedDrink: 'beer',
-        imageFile: 'pizzamargarita.jpg',
+        imageFile: 'pizza-margarita.jpg',
         ingredients: ['mozzarella', 'tomato sauce', 'basilicum'],
     };
 
@@ -48,7 +48,7 @@ app.get("/pizzas/veggie", (req, res, send) => {
         title: 'Veggie Pizza',
         price: 15,
         recommendedDrink: 'power smoothie',
-        imageFile: 'pizzaveggie.jpg',
+        imageFile: 'pizza-veggie.jpg',
         ingredients: ['cherry tomatoes', 'basilicum', 'Olives'],
     };
 
@@ -64,7 +64,7 @@ app.get("/pizzas/seafood", (req, res, send) => {
     const pizzaDetails = {
         title: 'Seafood Pizza',
         recommendedDrink: 'white wine',
-        imageFile: 'pizzaseafood.jpg',
+        imageFile: 'pizza-seafood.jpg',
         ingredients: ['tomato sauce', 'garlic', 'prawn'],
     };
 
