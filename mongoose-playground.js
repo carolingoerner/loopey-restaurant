@@ -9,8 +9,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/loopeyRestaurant")
         console.log(`Connected! Database Name: "${response.connections[0].name}"`);
         
         const pizzaOne = {
-            title: "veggie",
-            price: 12,
+            title: "seafood",
+            price: 18,
             dough: "classic"
         };
 
@@ -26,10 +26,14 @@ mongoose.connect("mongodb://127.0.0.1:27017/loopeyRestaurant")
         console.log(pizzasArr);
 
         //Model.findByIdAndUpdate(id, update [, options])
-        return Pizza.findByIdAndUpdate("6478ab28253a612d34d1b97f", {price: 20}, { returnDocument: 'after' })
+        // Pizza.findByIdAndUpdate("6478ab28253a612d34d1b97f", {price: 20}, { returnDocument: 'after' })
+
+        return Pizza.updateMany({price: {$gt: 12} }, {dough: "with garlic"});
+
     })
-    .then( (updatedPizzaFromDB) => {
-        console.log("luis, your pizza was updated....")
-        console.log(updatedPizzaFromDB)
+    .then( (result) => {
+        console.log("luis, your pizzas were updated....")
+        console.log(result)
     })
     .catch((err) => console.error("Error connecting to DB", err));
+
